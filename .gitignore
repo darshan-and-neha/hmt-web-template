@@ -1,0 +1,15 @@
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.DS_Store
+
+.prettierrc
+.yarn*
+.lintstaged*
+.husky/*
+
+node_modules

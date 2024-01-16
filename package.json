@@ -1,0 +1,34 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "hmt-web-template",
+  "main": "index.js",
+  "repository": "https://github.com/darshan-and-neha/hmt-web-template.git",
+  "author": "Neha Rajesh <leehanseok3@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "packageManager": "yarn@4.0.2",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "husky": "^8.0.0",
+    "prettier": "^3.2.2",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "postinstall": "husky install",
+    "format": "eslint --fix && prettier --write",
+    "prepare": "husky install",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "^20.11.3",
+    "@types/react": "^18.2.48",
+    "lint-staged": "^15.2.0",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
