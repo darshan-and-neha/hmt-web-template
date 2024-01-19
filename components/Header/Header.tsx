@@ -71,7 +71,7 @@ export const Header = () => {
 
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
-      <Group wrap="nowrap" align="flex-start">
+      <Group noWrap align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
           <item.icon
             style={{ width: rem(22), height: rem(22) }}
@@ -93,10 +93,10 @@ export const Header = () => {
   return (
     <Box pb={120}>
       <header className={classes.header}>
-        <Group justify="space-between" h="100%">
+        <Group position="apart" h="100%">
           {/* <MantineLogo size={30} /> */}
 
-          <Group h="100%" gap={0} visibleFrom="sm">
+          <Group h="100%" spacing={0}>
             <a href="#" className={classes.link}>
               Home
             </a>
@@ -122,7 +122,7 @@ export const Header = () => {
               </HoverCard.Target>
 
               <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
-                <Group justify="space-between" px="md">
+                <Group position="apart" px="md">
                   <Text fw={500}>Features</Text>
                   <Anchor href="#" fz="xs">
                     View all
@@ -136,7 +136,7 @@ export const Header = () => {
                 </SimpleGrid>
 
                 <div className={classes.dropdownFooter}>
-                  <Group justify="space-between">
+                  <Group position="apart">
                     <div>
                       <Text fw={500} fz="sm">
                         Get started
@@ -158,16 +158,12 @@ export const Header = () => {
             </a>
           </Group>
 
-          <Group visibleFrom="sm">
+          <Group>
             <Button variant="default">Log in</Button>
             <Button>Sign up</Button>
           </Group>
 
-          <Burger
-            opened={drawerOpened}
-            onClick={toggleDrawer}
-            hiddenFrom="sm"
-          />
+          <Burger opened={drawerOpened} onClick={toggleDrawer} />
         </Group>
       </header>
 
@@ -177,7 +173,6 @@ export const Header = () => {
         size="100%"
         padding="md"
         title="Navigation"
-        hiddenFrom="sm"
         zIndex={1000000}
       >
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
@@ -207,7 +202,7 @@ export const Header = () => {
 
           <Divider my="sm" />
 
-          <Group justify="center" grow pb="xl" px="md">
+          <Group position="center" grow pb="xl" px="md">
             <Button variant="default">Log in</Button>
             <Button>Sign up</Button>
           </Group>
