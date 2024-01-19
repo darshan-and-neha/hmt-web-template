@@ -1,18 +1,29 @@
-// Import styles of packages that you've installed.
-// All packages except `@mantine/hooks` require styles imports
-import '@mantine/core/styles.css'
-
 import type { AppProps } from 'next/app'
-import { createTheme, MantineProvider } from '@mantine/core'
+import Head from 'next/head'
+import { MantineProvider, createEmotionCache } from '@mantine/core'
 
-const theme = createTheme({
-  /** Put your mantine theme override here */
-})
+const myCache = createEmotionCache({ key: 'hmt' })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <MantineProvider theme={theme}>
-      <Component {...pageProps} />
-    </MantineProvider>
+    <>
+      <Head>
+        <title>Hire My Talent</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+      <div dir="rtl">
+        <MantineProvider
+          theme={{ dir: 'rtl' }}
+          emotionCache={myCache}
+          withGlobalStyles
+          withNormalizeCSS
+        >
+          <Component {...pageProps} />
+        </MantineProvider>
+      </div>
+    </>
   )
 }
